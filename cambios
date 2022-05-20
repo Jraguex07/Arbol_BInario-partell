@@ -1,0 +1,32 @@
+public  void levelOrderTree(NodoArbol Nodo) {
+
+        if (Nodo == null) {
+            return;
+        }
+        Queue<NodoArbol> queue = new LinkedList<NodoArbol>();// cola
+        queue.offer(Nodo);
+        while (!queue.isEmpty()) {
+
+            NodoArbol root = queue.poll();
+            // contenido de salida
+            System.out.print("\t" + root.dato);
+
+            // subárbol izquierdo
+            NodoArbol left = root.hijoIzquierdo;
+            if (left != null) {
+                queue.offer(left);
+            }
+            // subárbol derecho
+            NodoArbol right = root.hijoDerecho;
+            if (right != null) {
+                queue.offer(right);
+            }
+
+        }
+             ///////aca es para instanciarlo al menu 
+             case 12:
+                    System.out.println("tranversal");
+                    binaryTree1.levelOrderTree(binaryTree1.raiz);
+      
+                    break;
+    }
